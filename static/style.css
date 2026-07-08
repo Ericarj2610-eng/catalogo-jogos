@@ -1,0 +1,388 @@
+/* static/style.css */
+
+:root {
+  --primaria: #6c5ce7;        /* roxo gamer */
+  --primaria-escura: #4834d4;
+  --perigo: #e74c3c;          /* botão excluir */
+  --fundo: #121212;           /* fundo escuro */
+  --card: #1e1e1e;            /* cards dos jogos */
+  --texto: #f5f5f5;           /* texto claro */
+  --texto-secundario: #bdbdbd;
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --raio: 12px;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  line-height: 1.5;
+}
+
+
+/* Cabeçalho */
+
+.topo {
+  background: var(--primaria);
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--sombra);
+}
+
+
+.topo h1 {
+  color: white;
+}
+
+
+/* Menu */
+
+nav {
+  margin-top: 10px;
+}
+
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+
+nav a:hover {
+  color: #dfe6e9;
+}
+
+
+/* Área principal */
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 30px auto;
+}
+
+
+/* Grade dos jogos */
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+
+/* Card do jogo */
+
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+
+.card h2 {
+  color: var(--primaria);
+  margin-bottom: 10px;
+}
+
+
+.meta {
+  color: var(--texto-secundario);
+}
+
+
+.preco {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
+/* Botões */
+
+.btn {
+  background: var(--primaria);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.btn:hover {
+  background: var(--primaria-escura);
+}
+
+
+.btn-perigo {
+  background: var(--perigo);
+}
+
+
+/* Formulário */
+
+.formulario {
+  background: var(--card);
+  padding: 25px;
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+
+.formulario label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+
+.formulario input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: none;
+}
+
+.topo {
+  background: linear-gradient(90deg, var(--primaria), var(--primaria-escura));
+  color: #fff;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--sombra);
+}
+
+
+.topo h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+
+.topo nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 18px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+
+.topo nav a:hover {
+  color: #dcd6f7;
+  text-decoration: underline;
+}
+/* static/style.css */
+/* Layout e grade de cards - Catálogo de Jogos */
+
+.container {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+
+/* Grade responsiva dos jogos */
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* Card do jogo */
+
+.card {
+  background: var(--card);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 18px;
+  transition: transform 0.15s ease;
+}
+
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+
+/* Título do jogo */
+
+.card h2 {
+  font-size: 1.2rem;
+  color: var(--primaria);
+}
+
+
+/* Informações do jogo */
+
+.card .meta {
+  color: var(--texto-secundario);
+  font-size: 0.9rem;
+}
+
+
+.card .genero {
+  margin-top: 8px;
+  color: #bdbdbd;
+}
+
+
+.card .preco {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #00c853;
+  margin-top: 10px;
+}
+
+
+/* Etiqueta de gênero */
+
+.card .status {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+
+/* Jogo cadastrado */
+
+.card .status.disponivel {
+  background: #1b5e20;
+  color: #a5d6a7;
+}
+
+
+/* Jogo sem informação */
+
+.card .status.indisponivel {
+  background: #37474f;
+  color: #cfd8dc;
+}
+
+
+/* Botões de ação */
+
+.card .acoes {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+/* static/style.css */
+/* Botões e formulário - Catálogo de Jogos */
+
+/* Botões */
+
+.btn {
+  display: inline-block;
+  background: var(--primaria);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+.btn:hover {
+  background: var(--primaria-escura);
+  transform: scale(1.03);
+}
+
+
+/* Botão excluir */
+
+.btn-perigo {
+  background: var(--perigo);
+}
+
+
+.btn-perigo:hover {
+  background: #b71c1c;
+}
+
+/* Formulário de cadastro de jogos */
+
+.formulario {
+  background: var(--card);
+  color: var(--texto);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 24px;
+  max-width: 500px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+/* Texto dos campos */
+
+.formulario label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+}
+
+
+/* Campos de entrada */
+
+.formulario input,
+.formulario select {
+  padding: 10px;
+  background: #2c2c2c;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+
+/* Efeito ao clicar no campo */
+
+.formulario input:focus,
+.formulario select:focus {
+  outline: none;
+  border-color: var(--primaria);
+}
+
+
+/* Campo de preço */
+
+.formulario input[name="preco"] {
+  color: #00e676;
+  font-weight: bold;
+}
+
+
+/* Checkbox */
+
+.formulario .checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}

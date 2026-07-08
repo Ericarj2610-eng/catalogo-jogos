@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+<div class="grade">
+
+    {% for jogo in jogos %}
+
+    <div class="card">
+
+        <h2>{{ jogo.titulo }}</h2>
+
+        <p>
+            <strong>Desenvolvedora:</strong>
+            {{ jogo.desenvolvedora }}
+        </p>
+
+        <p>
+            <strong>Lançamento:</strong>
+            {% if jogo.data_lancamento %}
+                {{ jogo.data_lancamento.strftime('%d/%m/%Y') }}
+            {% endif %}
+        </p>
+
+        <p>
+            <strong>Gênero:</strong>
+            {{ jogo.genero.nome }}
+        </p>
+
+        <p>
+            <strong>Preço:</strong>
+            R$ {{ "%.2f"|format(jogo.preco) }}
+        </p>
+
+        <div class="acoes">
+
+            <a class="btn" href="/jogos/{{ jogo.id }}/editar">
+                Editar
+            </a>
+
+            <form method="post" action="/jogos/{{ jogo.id }}/excluir">
+
+                <button class="btn btn-perigo" type="submit">
+                    Excluir
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    {% else %}
+
+    <div class="card">
+        <h2>Nenhum jogo cadastrado</h2>
+        <p>Clique em <strong>+ Novo jogo</strong> para adicionar um jogo.</p>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

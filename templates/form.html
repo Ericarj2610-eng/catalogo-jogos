@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+<form class="formulario" method="post"
+action="{% if jogo %}/jogos/{{ jogo.id }}/editar{% else %}/jogos{% endif %}">
+
+    <label>
+        Título do jogo
+
+        <input
+            type="text"
+            name="titulo"
+            value="{{ jogo.titulo if jogo else '' }}"
+            required>
+    </label>
+
+
+    <label>
+        Desenvolvedora
+
+        <input
+            type="text"
+            name="desenvolvedora"
+            value="{{ jogo.desenvolvedora if jogo else '' }}"
+            required>
+    </label>
+
+
+    <label>
+        Data de lançamento
+
+        <input
+            type="date"
+            name="data_lancamento"
+            value="{{ jogo.data_lancamento if jogo else '' }}"
+            required>
+    </label>
+
+
+    <label>
+        Gênero
+
+        <select name="genero_id" required>
+
+            {% for g in generos %}
+
+            <option
+                value="{{ g.id }}"
+                {% if jogo and jogo.genero_id == g.id %}selected{% endif %}>
+
+                {{ g.nome }}
+
+            </option>
+
+            {% endfor %}
+
+        </select>
+
+    </label>
+
+
+    <label>
+        Preço (R$)
+
+        <input
+            type="number"
+            name="preco"
+            step="0.01"
+            min="0"
+            value="{{ jogo.preco if jogo else '0.00' }}"
+            required>
+
+    </label>
+
+
+    <button class="btn" type="submit">
+        Salvar
+    </button>
+
+</form>
+
+{% endblock %}
